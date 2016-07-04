@@ -1,6 +1,9 @@
 #!/bin/sh
 
-export Changelog=$PWD/Changelog.txt
+# Exports
+. $ANDROID_BUILD_TOP/vendor/aosp/tools/colors
+
+export Changelog=Changelog.txt
 
 if [ -f $Changelog ];
 then
@@ -9,9 +12,9 @@ fi
 
 touch $Changelog
 
-echo "Generating changelog..."
+echo ${bldppl}"Generating changelog..."${txtrst}
 
-for i in $(seq 10);
+for i in $(seq 14);
 do
 export After_Date=`date --date="$i days ago" +%m-%d-%Y`
 k=$(expr $i - 1)
