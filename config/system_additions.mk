@@ -25,6 +25,10 @@ ifneq (true,$(PRODUCT_FULL_TREBLE))
     vendor/aosp/prebuilt/etc/init.abc.rc:root/init.abc.rc
 endif
 
+# APN
+PRODUCT_COPY_FILES += \
+    vendor/aosp/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/aosp/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
