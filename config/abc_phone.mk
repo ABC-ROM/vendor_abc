@@ -12,11 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/aosp/configs/aosp_fixes.mk
-include vendor/aosp/configs/bootanimation.mk
-include vendor/aosp/configs/abc_main.mk
-include vendor/aosp/configs/system_additions.mk
-include vendor/aosp/configs/version.mk
+include vendor/aosp/config/aosp_fixes.mk
+include vendor/aosp/config/abc_main.mk
+include vendor/aosp/config/system_additions.mk
+include vendor/aosp/config/version.mk
 
 # Telephony packages
 PRODUCT_PACKAGES += \
@@ -31,3 +30,4 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.dun.override=0
 endif
 
+$(call inherit-product, vendor/aosp/config/bootanimation.mk)
